@@ -5,8 +5,8 @@ DockBox is a simple local development environment based on Docker, designed to f
 
 ## Installation
 ```bash
-git clone https://github.com/rocco-giandomenico/dockbox.git
-cd dockbox
+git clone https://github.com/rocco-giandomenico/dockBox.git
+cd dockBox
 cp sample.env .env
 docker compose up -d
 ```
