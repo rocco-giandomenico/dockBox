@@ -1,7 +1,18 @@
 .DS_Store
 /.env
 /.vscode
+
+# Config
 /config/*
+!/config/initdb.gitkeep
+!/config/php.gitkeep
+!/config/ssl.gitkeep
+!/config/vhosts.gitkeep
+
 /data/*
 /logs/*
+
+# Projects
 /www/**
+!/html/.gitkeep
+!/projects/.gitkeep
