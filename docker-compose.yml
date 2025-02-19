@@ -1,0 +1,77 @@
+services:
+
+    # ----------------------------------------------------------------------------
+    # WEBSERVER
+
+    webserver:
+
+        build:
+            context: ./bin/${PHPVERSION}
+            args:
+                USER_ID: ${USER_ID}
+                GROUP_ID: ${GROUP_ID}
+                UNAME: ${UNAME}
+
+        container_name: "${COMPOSE_PROJECT_NAME}-${PHPVERSION}"
+
+        ports:
+            - "${HOST_MACHINE_UNSECURE_HOST_PORT}:80"
+            - "${HOST_MACHINE_SECURE_HOST_PORT}:443"
+
+        links:
+            - database
+
+        volumes:
+            - ${SHARED_ROOT}/html:${APACHE_SHARED_ROOT}/html:rw
+            - ${SHARED_ROOT}/projects:${APACHE_SHARED_ROOT}/projects:rw
+            - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
+            - ${SSL_DIR-./config/ssl}:/etc/apache2/ssl/
+            - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
+            - ${LOG_DIR-./logs/apache2}:/var/log/apache2
+
+        environment:
+            DOMAIN: ${DOMAIN}
+            APACHE_SHARED_ROOT: ${APACHE_SHARED_ROOT}
+            SHARED_ROOT: ${SHARED_ROOT}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            HOST_MACHINE_MYSQL_PORT: ${HOST_MACHINE_MYSQL_PORT}
+            USER_ID: ${USER_ID}
+            GROUP_ID: ${GROUP_ID}
+            UNAME: ${UNAME}
+            SSL_TYPE: ${SSL_TYPE}
+            MAIN_FOLDER: ${MAIN_FOLDER}
+            HOST_MACHINE_SECURE_HOST_PORT: ${HOST_MACHINE_SECURE_HOST_PORT}
+            HOST_MACHINE_UNSECURE_HOST_PORT: ${HOST_MACHINE_UNSECURE_HOST_PORT}
+
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+
+        command: apache2-foreground
+
+    # ----------------------------------------------------------------------------
+    # DATABASE
+
+    database:
+
+        build:
+            context: "./bin/${DATABASE}"
+
+        container_name: "${COMPOSE_PROJECT_NAME}-${DATABASE}"
+
+        ports:
+            - "127.0.0.1:${HOST_MACHINE_MYSQL_PORT}:3306"
+
+        volumes:
+            - ${MYSQL_INITDB_DIR-./config/initdb}:/docker-entrypoint-initdb.d
+            - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
+            - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
+            
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
