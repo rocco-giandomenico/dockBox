@@ -1,18 +1,37 @@
+# ------------------------------------------------------------------------------
+# General
+
 .DS_Store
 /.env
 /.vscode
 
+# ------------------------------------------------------------------------------
 # Config
-/config/*
-!/config/initdb/.gitkeep
-!/config/php/.gitkeep
-!/config/ssl/.gitkeep
-!/config/vhosts/.gitkeep
 
-/data/*
-/logs/*
+/config/**
+!/config/initdb/
+!/config/php/
+!/config/ssl/
+!/config/vhosts/
 
-# Projects
+# ------------------------------------------------------------------------------
+# Data
+
+/data/**
+!/data/mysql/
+
+# ------------------------------------------------------------------------------
+# Logs
+
+/logs/**
+!/logs/apache2/
+!logs/mysql/
+
+# ------------------------------------------------------------------------------
+# Dashboard & Projects folder
+
 /www/**
-!/html/.gitkeep
-!/projects/.gitkeep
+!/www/html/
+!/www/html/**
+!/www/projects/
+
