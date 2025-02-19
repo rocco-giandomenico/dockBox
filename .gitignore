@@ -4,10 +4,10 @@
 
 # Config
 /config/*
-!/config/initdb.gitkeep
-!/config/php.gitkeep
-!/config/ssl.gitkeep
-!/config/vhosts.gitkeep
+!/config/initdb/.gitkeep
+!/config/php/.gitkeep
+!/config/ssl/.gitkeep
+!/config/vhosts/.gitkeep
 
 /data/*
 /logs/*
