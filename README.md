@@ -12,7 +12,7 @@ docker compose up -d
 ```
 
 ```bash
-docker compose exec --user dockbox webserver bash -l
+docker compose exec --user dockbox webserver bash
 ```
 
 <!-- ----------------------------------------------------------------------- -->
