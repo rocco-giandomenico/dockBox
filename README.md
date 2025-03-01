@@ -16,6 +16,7 @@ cd dockBox
 cp sample.env .env
 docker compose up -d
 ```
+Go to dashboard -> http://localhost/
 
 ```bash
 docker compose exec --user dockbox webserver bash
