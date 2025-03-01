@@ -3,16 +3,8 @@
 # dockBox
 DockBox is a simple local development environment based on Docker, designed to facilitate web development across multiple platforms.
 
-- PHP
-- Apache
-- MariaDB
-
-- Git
-- Composer
-- Node.js
-- Npm
-- Yarn
-- Vite
+> PHP, Apache, MariaDB
+> Git, Composer, Node.js, Npm, Yarn, Vite
 
 <!-- ----------------------------------------------------------------------- -->
 
