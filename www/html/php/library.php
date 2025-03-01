@@ -65,8 +65,7 @@ function getTools() {
         'Node.js'   => getToolVersion('node --version'),
         'Npm'       => getToolVersion('npm --version 2>&1'),
         'Yarn'      => getToolVersion('yarn --version 2>&1'),
-        'Vite'      => getToolVersion('vite --version 2>&1'),
-        'test'      => shell_exec('lsof -i :5173')
+        'Vite'      => getToolVersion('vite --version 2>&1')
     ];
 
     foreach ($ver as $k => $v) {
