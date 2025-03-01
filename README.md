@@ -22,7 +22,7 @@ docker compose exec --user dockbox webserver bash
 $ yarn create vite my-app --template vue
 $ yarn create vite my-app --template react
 ```
-# Development
+### Development
 ```bash
 cd my-app
 yarn
