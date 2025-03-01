@@ -160,7 +160,7 @@ function getProjects() {
 
 function getFooter() {
 
-    $version = 'v0.1.6';
+    $version = 'v0.2.0';
 
     return <<<EOF
         <footer class="footer">
