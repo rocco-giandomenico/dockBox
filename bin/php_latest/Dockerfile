@@ -73,8 +73,7 @@ RUN apt-get update -q --fix-missing && \
     curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
     apt-get install -y nodejs && \
     npm install --global yarn && \
-    npm install -g npm@latest && \
-    npm install -g create-react-app react-scripts && \
+    npm install --global vite create-vite && \
     \
     \
     # Install Composer
