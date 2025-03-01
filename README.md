@@ -18,9 +18,11 @@ docker compose up -d
 ```
 Go to dashboard -> http://localhost/
 
+### Container Shell
 ```bash
 docker compose exec --user dockbox webserver bash
 ```
+![Alt text](www/html/assets/images/shell.png)
 
 <!-- ----------------------------------------------------------------------- -->
 
