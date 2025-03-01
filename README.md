@@ -46,6 +46,11 @@ export default defineConfig({
 ```
 ### Build
 ```conf
+
+# ------------------------------------------------------------------------------
+# default.com
+# ------------------------------------------------------------------------------
+
 <VirtualHost *:80>
     ServerAlias *.${DOMAIN}
     DocumentRoot ${APACHE_SHARED_ROOT}/projects/my-app/dist
