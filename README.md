@@ -1,4 +1,4 @@
-![Alt text](www/images/cover.png)
+![Alt text](www/html/assets/images/cover.png)
 
 # dockBox
 DockBox is a simple local development environment based on Docker, designed to facilitate web development across multiple platforms.
