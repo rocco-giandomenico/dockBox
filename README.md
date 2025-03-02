@@ -1,4 +1,4 @@
-![Alt text](www/html/assets/images/cover.png)
+![Alt text](www/html/assets/images/screenshot.png)
 
 # dockBox
 DockBox is a simple local development environment based on Docker, designed to facilitate web development across multiple platforms.
@@ -22,7 +22,7 @@ Go to dashboard -> http://localhost/
 ```bash
 docker compose exec --user dockbox webserver bash
 ```
-![Alt text](www/html/assets/images/shell.png)
+![Alt text](www/html/assets/images/container_shell.png)
 
 <!-- ----------------------------------------------------------------------- -->
 
