@@ -160,13 +160,14 @@ function getProjects() {
 
 function getFooter() {
 
-    $version = 'v0.2.1';
+    $version = 'v0.2.2';
+    $year = date("Y");
 
     return <<<EOF
         <footer class="footer">
             <div class="content has-text-centered">
                 <p>
-                    <strong><a href="https://github.com/rocco-giandomenico" target="_blank">© 2024 - Rocco Giuseppe Giandomenico</a></strong><br>
+                    <strong><a href="https://github.com/rocco-giandomenico" target="_blank">© $year - Rocco Giuseppe Giandomenico</a></strong><br>
                     The source code is released under the <a href="./php/mit.php" target="_blank">MIT license</a>.<br>
                     <strong>$version</strong>
                 </p>
