@@ -45,6 +45,14 @@ function getEnviroment() {
                         <td>$php_version</td>
                     </tr>
                     <tr>
+                        <td>sqlsrv - pdo_sqlsrv</td>
+                        <td>$sqlsrv - $pdo_sqlsrv</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                <tbody>
+                    <tr>
                         <td>Webserver</td>
                         <td>$apache_version</td>
                     </tr>
@@ -52,10 +60,7 @@ function getEnviroment() {
                         <td>Database</td>
                         <td>$db_version</td>
                     </tr>
-                    <tr>
-                        <td>sqlsrv - pdo_sqlsrv</td>
-                        <td>$sqlsrv - $pdo_sqlsrv</td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </div>
