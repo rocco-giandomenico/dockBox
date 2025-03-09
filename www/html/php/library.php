@@ -172,7 +172,7 @@ function getProjects() {
 
 function getFooter() {
 
-    $version = 'v0.2.2';
+    $version = 'v0.2.3';
     $year = date("Y");
 
     return <<<EOF
