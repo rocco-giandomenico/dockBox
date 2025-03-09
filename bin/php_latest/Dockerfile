@@ -34,13 +34,15 @@ RUN apt-get update -q --fix-missing && \
         gnupg \
         lsb-release \
         unixodbc-dev && \
-
+    \
+    \
     # Aggiunta chiave Microsoft e repository
     curl -sSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft.gpg && \
     echo "deb [signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/debian/$(lsb_release -rs)/prod $(lsb_release -cs) main" > /etc/apt/sources.list.d/mssql-release.list && \
     apt-get update -q --fix-missing && \
     ACCEPT_EULA=Y apt-get install -y msodbcsql17 mssql-tools && \
-
+    \
+    \
     # Install PHP Extensions
     pecl install sqlsrv pdo_sqlsrv && \
     docker-php-ext-enable sqlsrv pdo_sqlsrv && \
