@@ -21,6 +21,9 @@ function getEnviroment() {
     $apache_version = apache_get_version();
     $php_version = phpversion();
 
+    $sqlsrv = extension_loaded('sqlsrv') ? phpversion('sqlsrv') : 'Disabled';
+    $pdo_sqlsrv = extension_loaded('pdo_sqlsrv') ? phpversion('pdo_sqlsrv') : 'Disabled';
+
     $link = mysqli_connect("database", "root", $_ENV['MYSQL_ROOT_PASSWORD'], null);
 
     if (mysqli_connect_errno()) {
@@ -48,6 +51,10 @@ function getEnviroment() {
                     <tr>
                         <td>Database</td>
                         <td>$db_version</td>
+                    </tr>
+                    <tr>
+                        <td>SQLSRV - PDO_SQLSRV</td>
+                        <td>$sqlsrv - $pdo_sqlsrv</td>
                     </tr>
                 </tbody>
             </table>
