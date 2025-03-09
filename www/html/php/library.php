@@ -53,7 +53,7 @@ function getEnviroment() {
                         <td>$db_version</td>
                     </tr>
                     <tr>
-                        <td>SQLSRV - PDO_SQLSRV</td>
+                        <td>sqlsrv - pdo_sqlsrv</td>
                         <td>$sqlsrv - $pdo_sqlsrv</td>
                     </tr>
                 </tbody>
