@@ -84,4 +84,4 @@ yarn build
 
 ## License
 
-**[MIT License](https://github.com/rocco-giandomenico/dockBox/blob/main/LICENSE)**
+**[MIT License](https://github.com/rocco-giandomenico/dockBox?tab=MIT-1-ov-file)**
